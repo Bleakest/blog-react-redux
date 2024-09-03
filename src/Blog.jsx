@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 
 const Content = styled.div`
   padding: 120px 0;
@@ -20,8 +20,6 @@ const H2 = styled.h2`
   text-align: center;
 `;
 
-const Footer = () => <div>Footer</div>;
-
 function Blog() {
   return (
     <AppColumn>
@@ -38,7 +36,7 @@ function Blog() {
           <Route path="*" element={<div>Error</div>} />
         </Routes>
       </Content>
-      <Footer></Footer>
+      <Footer />
     </AppColumn>
   );
 }
