@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { Header, Footer } from "./components";
+import { Authorization } from "./pages/authorization/authorization";
 
 const Content = styled.div`
   padding: 120px 0;
@@ -16,19 +17,14 @@ const AppColumn = styled.div`
   margin: 0 auto;
 `;
 
-const H2 = styled.h2`
-  text-align: center;
-`;
-
 function Blog() {
   return (
     <AppColumn>
       <Header />
       <Content>
-        <H2> Контент страницы</H2>
         <Routes>
           <Route path="/" element={<div>Main</div>} />
-          <Route path="/login" element={<div>Login</div>} />
+          <Route path="/login" element={<Authorization />} />
           <Route path="/register" element={<div>Registration</div>} />
           <Route path="/users" element={<div>Users</div>} />
           <Route path="/post" element={<div>New Post</div>} />
