@@ -6,10 +6,10 @@ export const addUser = (login, password) =>
     headers: {
       "Content-type": "application/json;charset=utf-8",
     },
-    body: JSON.strinregLoginify({
+    body: JSON.stringify({
       login,
       password,
       registred_at: generateDate(),
       role_id: 2,
     }),
-  });
+  }).then((createdUser) => createdUser.json());
