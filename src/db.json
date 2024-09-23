@@ -3,37 +3,16 @@
     {
       "id": "001",
       "login": "anton",
-      "password": "qwerty123",
+      "password": "qwe123",
       "registred_at": "2020-09-22",
       "role_id": 0
-    },
-    {
-      "id": "2249",
-      "login": "ivan",
-      "password": "qwerty123",
-      "registred_at": "2035-10-24 11:19",
-      "role_id": 2
     },
     {
       "id": "2bf5",
       "login": "dima",
       "password": "qwerty123",
       "registred_at": "2033-11-05 07:52",
-      "role_id": 2
-    },
-    {
-      "id": "19b5",
-      "login": "lesha",
-      "password": "qwerty123",
-      "registred_at": "2034-03-05 07:15",
-      "role_id": 2
-    },
-    {
-      "id": "f3c5",
-      "login": "dddd",
-      "password": "qwerty123",
-      "registred_at": "2033-05-21 11:47",
-      "role_id": 2
+      "role_id": 0
     }
   ],
   "roles": [
