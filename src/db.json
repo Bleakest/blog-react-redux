@@ -93,41 +93,6 @@
   ],
   "comments": [
     {
-      "id": "2e6d",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2033-08-17 08:24",
-      "content": "Комментарий!!"
-    },
-    {
-      "id": "6ea6",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2033-11-26 15:45",
-      "content": "Комментарий!!ффвф"
-    },
-    {
-      "id": "f15f",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2035-03-23 12:53",
-      "content": "Комментарий!!ффвфвфыв"
-    },
-    {
-      "id": "dbcf",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2034-11-28 19:37",
-      "content": "Комментарий!!ффвфвфывывфы"
-    },
-    {
-      "id": "ed5f",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2035-10-21 17:10",
-      "content": "Комментарий!!ффвфвфывывфывфвфв"
-    },
-    {
       "id": "989d",
       "author_id": "anton",
       "post_id": "",
@@ -170,25 +135,25 @@
       "content": "a"
     },
     {
-      "id": "a936",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2034-03-08 19:26",
-      "content": "a"
-    },
-    {
-      "id": "c680",
-      "author_id": "anton",
-      "post_id": "001",
-      "published_at": "2034-12-07 00:07",
-      "content": "da"
-    },
-    {
       "id": "aabe",
       "author_id": "anton",
       "post_id": "001",
       "published_at": "2036-04-22 05:25",
       "content": "adw"
+    },
+    {
+      "id": "d99e",
+      "author_id": "dima",
+      "post_id": "001",
+      "published_at": "2036-03-17 18:35",
+      "content": "adda"
+    },
+    {
+      "id": "738b",
+      "author_id": "anton",
+      "post_id": "001",
+      "published_at": "2035-12-10 05:24",
+      "content": "dasdasd"
     }
   ],
   "sessions": [
@@ -215,8 +180,19 @@
       }
     },
     {
-      "id": "a0be",
-      "hash": "0.69627631165528103274198201688705012202262878417969",
+      "id": "7f50",
+      "hash": "0.38621223232683288273392463452182710170745849609375",
+      "user": {
+        "id": "2bf5",
+        "login": "dima",
+        "registredAt": "2033-11-05 07:52",
+        "password": "qwerty123",
+        "roleid": 0
+      }
+    },
+    {
+      "id": "4cf6",
+      "hash": "0.05893064363791244986146011797245591878890991210938",
       "user": {
         "id": "001",
         "login": "anton",

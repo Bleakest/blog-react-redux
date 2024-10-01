@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import { Header, Footer } from "./components";
+import { Header, Footer, Modal } from "./components";
 import { Registration, Authorization, Users, Post } from "./pages";
 import { useLayoutEffect } from "react";
 import { setUser } from "./actions";
@@ -54,6 +54,7 @@ function Blog() {
         </Routes>
       </Page>
       <Footer />
+      <Modal />
     </AppColumn>
   );
 }
