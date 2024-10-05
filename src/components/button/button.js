@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const ButtonContainer = ({ className, children, props, width }) => {
+const ButtonContainer = ({ className, children, width, ...props }) => {
   return (
     <button className={className} {...props}>
       {children}
