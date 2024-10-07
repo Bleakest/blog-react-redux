@@ -1,18 +1,25 @@
 import styled from "styled-components";
-import { Content, H2 } from "../../components";
+import { PrivateContent, H2 } from "../../components";
 import { TableRow, UserRow } from "./components";
 import { useServerRequest } from "../../hooks";
 import { useEffect, useState } from "react";
 import { ROLE } from "../../constans/role";
+import { checkAccess } from "../../utils/check-access";
+import { useSelector } from "react-redux";
+import { SelectUserRole } from "../../selectors";
 
 const UsersContainer = ({ className }) => {
   const [roles, setRoles] = useState([]);
   const [users, setUsers] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
+  const userRole = useSelector(SelectUserRole);
   const requestServer = useServerRequest();
   const [shouldUpdateUserList, setShouldUpdateUserList] = useState(false);
 
   useEffect(() => {
+    if (!checkAccess([ROLE.ADMIN], userRole)) {
+      return;
+    }
     Promise.all([
       requestServer("fetchUsers"),
       requestServer("fetchRoles"),
@@ -26,17 +33,20 @@ const UsersContainer = ({ className }) => {
 
       setRoles(rolesRes.res);
     });
-  }, [requestServer, shouldUpdateUserList]);
+  }, [requestServer, shouldUpdateUserList, userRole]);
 
   const onUserRemove = (userId) => {
+    if (!checkAccess([ROLE.ADMIN], userRole)) {
+      return;
+    }
     requestServer("removeUser", userId).then(() => {
       setShouldUpdateUserList(!shouldUpdateUserList);
     });
   };
 
   return (
-    <div className={className}>
-      <Content error={errorMessage}>
+    <PrivateContent access={[ROLE.ADMIN]} serverError={errorMessage}>
+      <div className={className}>
         <H2>Пользователи</H2>
         <div>
           <TableRow>
@@ -59,8 +69,8 @@ const UsersContainer = ({ className }) => {
             />
           ))}
         </div>
-      </Content>
-    </div>
+      </div>
+    </PrivateContent>
   );
 };
 
@@ -70,5 +80,4 @@ export const Users = styled(UsersContainer)`
   flex-direction: column;
   margin: 0 auto;
   width: 570px;
-  font-size: 18px;
 `;
