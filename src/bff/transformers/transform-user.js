@@ -3,5 +3,5 @@ export const transformUser = (dbUser) => ({
   login: dbUser.login,
   registredAt: dbUser.registred_at,
   password: dbUser.password,
-  roleid: dbUser.role_id,
+  roleId: dbUser.role_id,
 });

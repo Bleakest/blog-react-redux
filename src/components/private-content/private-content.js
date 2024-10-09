@@ -12,5 +12,9 @@ export const PrivateContent = ({ children, access, serverError = null }) => {
     : ERROR.ACCESS_DENIED;
   const error = serverError || accessError;
 
+  // console.log(accessError);
+  // console.log(serverError);
+  // console.log(error);
+
   return error ? <Error error={error} /> : children;
 };

@@ -24,6 +24,8 @@ const UsersContainer = ({ className }) => {
       requestServer("fetchUsers"),
       requestServer("fetchRoles"),
     ]).then(([usersRes, rolesRes]) => {
+      // console.log(usersRes, rolesRes);
+
       if (usersRes.error || rolesRes.error) {
         setErrorMessage(usersRes.error || rolesRes.error);
         return;

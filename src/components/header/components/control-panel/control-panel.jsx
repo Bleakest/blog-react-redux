@@ -10,6 +10,7 @@ import {
 } from "../../../../selectors";
 import { ROLE } from "../../../../constans/role";
 import { logout } from "../../../../actions";
+import { checkAccess } from "../../../../utils/check-access";
 
 const RightAligned = styled.div`
   display: flex;
@@ -40,6 +41,8 @@ const ControlPanelContainer = ({ className }) => {
     sessionStorage.removeItem("userData");
   };
 
+  const isAdmin = checkAccess([ROLE.ADMIN], roleId);
+
   return (
     <div className={className}>
       <RightAligned>
@@ -63,12 +66,16 @@ const ControlPanelContainer = ({ className }) => {
         <StyledBackIcon onClick={() => navigate(-1)}>
           <Icon id="fa-backward" size="20px" margin="10px 0 0 0" />
         </StyledBackIcon>
-        <Link to="/post">
-          <Icon id="fa-file-text-o" size="20px" margin="10px 0 0 15px" />
-        </Link>
-        <Link to="/users">
-          <Icon id="fa-users" size="20px" margin="10px 0 0 15px" />
-        </Link>
+        {isAdmin && (
+          <>
+            <Link to="/post">
+              <Icon id="fa-file-text-o" size="20px" margin="10px 0 0 15px" />
+            </Link>
+            <Link to="/users">
+              <Icon id="fa-users" size="20px" margin="10px 0 0 15px" />
+            </Link>
+          </>
+        )}
       </RightAligned>
     </div>
   );

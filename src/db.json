@@ -10,9 +10,9 @@
     {
       "id": "2bf5",
       "login": "dima",
-      "password": "qwerty123",
+      "password": "qwe123",
       "registred_at": "2033-11-05 07:52",
-      "role_id": 0
+      "role_id": 1
     }
   ],
   "roles": [
@@ -154,6 +154,20 @@
       "post_id": "002",
       "published_at": "2036-01-06 03:57",
       "content": "gthasd"
+    },
+    {
+      "author_id": "anton",
+      "post_id": "002",
+      "published_at": "2034-03-01 22:07",
+      "content": "da",
+      "id": "BgkXuy_"
+    },
+    {
+      "author_id": "dima",
+      "post_id": "002",
+      "published_at": "2033-10-30 06:05",
+      "content": "wa",
+      "id": "5M0pAap"
     }
   ],
   "sessions": [
@@ -222,6 +236,17 @@
         "password": "qwe123",
         "roleid": 0
       }
+    },
+    {
+      "hash": "0.15636488441090889978113409597426652908325195312500",
+      "user": {
+        "id": "2bf5",
+        "login": "dima",
+        "registredAt": "2033-11-05 07:52",
+        "password": "qwe123",
+        "roleId": 1
+      },
+      "id": "45qmwJP"
     }
   ]
 }
