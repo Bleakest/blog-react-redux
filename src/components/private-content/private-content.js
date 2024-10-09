@@ -22,6 +22,6 @@ export const PrivateContent = ({ children, access, serverError = null }) => {
 
 PrivateContent.propTypes = {
   children: PropTypes.node,
-  access: PropTypes.arrayOf(PropTypes.arrayOf(PROP_TYPE.ROLE_ID)).isRequired,
+  access: PropTypes.array,
   serverError: PROP_TYPE.ERROR,
 };
