@@ -156,13 +156,6 @@
       "content": "gthasd"
     },
     {
-      "author_id": "anton",
-      "post_id": "002",
-      "published_at": "2034-03-01 22:07",
-      "content": "da",
-      "id": "BgkXuy_"
-    },
-    {
       "author_id": "dima",
       "post_id": "002",
       "published_at": "2033-10-30 06:05",
@@ -238,15 +231,15 @@
       }
     },
     {
-      "hash": "0.15636488441090889978113409597426652908325195312500",
+      "hash": "0.93457466085600104932495924003887921571731567382813",
       "user": {
-        "id": "2bf5",
-        "login": "dima",
-        "registredAt": "2033-11-05 07:52",
+        "id": "001",
+        "login": "anton",
+        "registredAt": "2020-09-22",
         "password": "qwe123",
-        "roleId": 1
+        "roleId": 0
       },
-      "id": "45qmwJP"
+      "id": "NuTRnxR"
     }
   ]
 }

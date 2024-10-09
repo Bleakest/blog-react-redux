@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { H2, Icon } from "../../../../components";
 import { SpecialPanel } from "../special-panel/special-panel";
 import { useNavigate } from "react-router-dom";
+import { PROP_TYPE } from "../../../../constans";
 
 const PostContentContainer = ({
   className,
@@ -10,7 +11,7 @@ const PostContentContainer = ({
   const navigate = useNavigate();
   return (
     <div className={className}>
-      <img src={imageUrl} />
+      <img src={imageUrl} alt={title} />
       <H2>{title}</H2>
       <SpecialPanel
         id={id}
@@ -40,3 +41,7 @@ export const PostContent = styled(PostContentContainer)`
     white-space: pre-line;
   }
 `;
+
+PostContent.propTypes = {
+  post: PROP_TYPE.POST,
+};
