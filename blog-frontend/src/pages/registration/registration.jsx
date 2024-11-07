@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { server } from "../../bff";
 import { useState } from "react";
 import styled from "styled-components";
 import { Button, H2, Input, AuthFormError } from "../../components";
@@ -11,6 +10,7 @@ import { setUser } from "../../actions";
 import { SelectUserRole } from "../../selectors";
 import { ROLE } from "../../constans";
 import { useResetForm } from "../../hooks";
+import { request } from "../../utils/request";
 
 const regFormSchema = yup.object().shape({
   login: yup
@@ -52,14 +52,20 @@ const RegistrationContainer = ({ className }) => {
   useResetForm(reset);
 
   const onSubmit = ({ login, password }) => {
-    server.register(login, password).then(({ error, res }) => {
-      if (error) {
-        setServerError(`Ошибка запроса: ${error}`);
-        return;
+    request("/register", "POST", { login, password }).then(
+      ({ error, user }) => {
+        
+        if (error) {
+          setServerError(`Ошибка запроса: ${error}`);
+          return;
+        }
+
+        console.log(1);
+        
+        dispatch(setUser(user));
+        sessionStorage.setItem("userData", JSON.stringify(user));
       }
-      dispatch(setUser(res));
-      sessionStorage.setItem("userData", JSON.stringify(res));
-    });
+    );
   };
 
   const formError =
@@ -98,7 +104,7 @@ const RegistrationContainer = ({ className }) => {
             onChange: () => setServerError(null),
           })}
         />
-        <Button disabled={formError} type="submit">
+        <Button disabled={!!formError} type="submit">
           Зарегистрироваться
         </Button>
         {errorMessage && <AuthFormError>{errorMessage}</AuthFormError>}

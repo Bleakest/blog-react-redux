@@ -41,6 +41,8 @@ function Blog() {
       })
     );
   }, [dispatch]);
+
+  
   return (
     <AppColumn>
       <Header />
